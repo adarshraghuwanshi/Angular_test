@@ -1,13 +1,31 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { PersonService } from './person.service';
+import { Person } from './person';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  providers: [PersonService]
 })
 export class AppComponent {
-  title = 'people-management';
+  people: Person[] = [];
+
+  constructor(private personService: PersonService) { }
+
+  ngOnInit(): void {
+    this.fetchPeople();
+  }
+
+  fetchPeople(): void {
+    this.personService.getPeople().subscribe(data => {
+      this.people = data;
+    }, error => {
+      console.error('Error fetching people', error);
+    });
+  }
 }

@@ -1,20 +1,20 @@
 <h2>Edit Person</h2>
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="updatePerson()">
   <label>
     Name:
-    <input [(ngModel)]="person.name" name="name">
+    <input [(ngModel)]="person.name" name="name" required>
   </label>
   <label>
     Age:
-    <input [(ngModel)]="person.age" name="age" type="number">
+    <input [(ngModel)]="person.age" name="age" type="number" required>
   </label>
   <label>
     Gender:
-    <input [(ngModel)]="person.gender" name="gender">
+    <input [(ngModel)]="person.gender" name="gender" required>
   </label>
   <label>
     Mobile:
-    <input [(ngModel)]="person.mobile" name="mobile">
+    <input [(ngModel)]="person.mobile" name="mobile" required>
   </label>
-  <button type="submit">Save</button>
+  <button type="submit">Update</button>
 </form>
