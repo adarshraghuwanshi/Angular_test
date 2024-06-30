@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PersonDeleteComponent } from './person-delete.component';
+import { AddPersonFormComponent } from './add-person-form.component';
 
-describe('PersonDeleteComponent', () => {
-  let component: PersonDeleteComponent;
-  let fixture: ComponentFixture<PersonDeleteComponent>;
+describe('AddPersonFormComponent', () => {
+  let component: AddPersonFormComponent;
+  let fixture: ComponentFixture<AddPersonFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PersonDeleteComponent]
+      imports: [AddPersonFormComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PersonDeleteComponent);
+    fixture = TestBed.createComponent(AddPersonFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,22 @@
+ <div class="add-person-form">
+    <h3>Add New Person</h3>
+    <form (ngSubmit)="addPerson()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" [(ngModel)]="newName" name="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input id="age" type="number" [(ngModel)]="newAge" name="age" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input id="gender" [(ngModel)]="newGender" name="gender" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input id="mobile" [(ngModel)]="newMobile" name="mobile" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Person</button>
+    </form>
+  </div>

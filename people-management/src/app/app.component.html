@@ -1,5 +1,10 @@
 <div class="container">
   <h2>People List</h2>
+  <!-- <app-people-list></app-people-list>
+  <app-add-person-form> </app-add-person-form>
+  <app-edit-person-form></app-edit-person-form> -->
+
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -7,6 +12,7 @@
         <th>Age</th>
         <th>Gender</th>
         <th>Mobile</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +21,56 @@
         <td>{{ person.age }}</td>
         <td>{{ person.gender }}</td>
         <td>{{ person.mobile }}</td>
+        <td>
+          <button (click)="deletePerson(person.name)" class="btn btn-danger">Delete</button>
+        </td>
       </tr>
     </tbody>
-  </table>
+  </table> 
+
+  <div class="add-person-form">
+    <h3>Add New Person</h3>
+    <form (ngSubmit)="addPerson()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" [(ngModel)]="newName" name="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input id="age" type="number" [(ngModel)]="newAge" name="age" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input id="gender" [(ngModel)]="newGender" name="gender" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input id="mobile" [(ngModel)]="newMobile" name="mobile" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Person</button>
+    </form>
+  </div> 
+
+  <div class="edit-person-form">
+    <h3>Edit Person</h3>
+    <form (ngSubmit)="editPerson()">
+      <div class="form-group">
+        <label for="edit-name">Name:</label>
+        <input id="edit-name" [(ngModel)]="newName" name="edit-name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="edit-age">Age:</label>
+        <input id="edit-age" type="number" [(ngModel)]="newAge" name="edit-age" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="edit-gender">Gender:</label>
+        <input id="edit-gender" [(ngModel)]="newGender" name="edit-gender" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="edit-mobile">Mobile:</label>
+        <input id="edit-mobile" [(ngModel)]="newMobile" name="edit-mobile" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success">Edit Person</button>
+    </form>
+  </div> 
 </div>

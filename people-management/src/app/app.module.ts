@@ -1,20 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PersonListComponent } from './person-list/person-list.component';
-import { PersonEditComponent } from './person-edit/person-edit.component';
-import { PersonDeleteComponent } from './person-delete/person-delete.component';
+import { PeopleListComponent } from './people-list/people-list.component';
+import { AddPersonFormComponent } from './add-person-form/add-person-form.component';
+import { EditPersonFormComponent } from './edit-person-form/edit-person-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonListComponent,
-    PersonEditComponent,
-    PersonDeleteComponent
+    PeopleListComponent,
+    AddPersonFormComponent,
+    EditPersonFormComponent
   ],
   imports: [
     BrowserModule,

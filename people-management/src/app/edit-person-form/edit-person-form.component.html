@@ -1,0 +1,22 @@
+<div class="edit-person-form">
+    <h3>Edit Person</h3>
+    <form (ngSubmit)="editPerson()">
+      <div class="form-group">
+        <label for="edit-name">Name:</label>
+        <input id="edit-name" [(ngModel)]="newName" name="edit-name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="edit-age">Age:</label>
+        <input id="edit-age" type="number" [(ngModel)]="newAge" name="edit-age" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="edit-gender">Gender:</label>
+        <input id="edit-gender" [(ngModel)]="newGender" name="edit-gender" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="edit-mobile">Mobile:</label>
+        <input id="edit-mobile" [(ngModel)]="newMobile" name="edit-mobile" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success">Edit Person</button>
+    </form>
+  </div>
